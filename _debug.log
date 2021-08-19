@@ -1,0 +1,80 @@
+2020-10-29 09:57:11,373:DEBUG:<module>:Start::1495
+2020-10-29 09:58:08,790:WARNING:__init__:ERROR: no such table: main.MAESTRO:370
+2020-10-29 09:58:10,207:DEBUG:exit_handler:END.:149
+2020-10-29 10:04:27,545:DEBUG:<module>:Start::1495
+2020-10-29 10:04:30,951:ERROR:run_query:error con:no such table: Maestro-SELECT * from "Maestro" limit 1000-{}:669
+Traceback (most recent call last):
+  File "E:\Dropbox\Programación\Python\GEST2020\gest2020.py", line 666, in run_query
+    result = cursor.execute(query, parameters)
+sqlite3.OperationalError: no such table: Maestro
+2020-10-29 10:14:09,658:WARNING:__init__:ERROR: no such table: main.MAESTRO:370
+2020-10-29 10:14:11,154:DEBUG:exit_handler:END.:149
+2020-10-29 10:14:23,520:DEBUG:<module>:Start::1495
+2020-10-29 10:14:38,090:ERROR:run_query:error con:no such table: Maestro-SELECT * from "Maestro" limit 1000-{}:669
+Traceback (most recent call last):
+  File "E:\Dropbox\Programación\Python\GEST2020\gest2020.py", line 666, in run_query
+    result = cursor.execute(query, parameters)
+sqlite3.OperationalError: no such table: Maestro
+2020-10-29 10:16:44,004:DEBUG:exit_handler:END.:1492020-12-28 13:26:34,620:DEBUG:<module>:Start::1502
+2020-12-28 13:27:43,655:DEBUG:exit_handler:END.:149
+2021-03-09 09:34:10,299:WARNING:__init__:ERROR: table "MAESTRO" already exists:372
+2021-03-09 09:43:32,856:WARNING:__init__:ERROR: [Errno 2] No such file or directory: 'UNDO.xls':372
+2021-03-09 09:44:30,382:WARNING:__init__:ERROR: 'str' object has no attribute 'drop':372
+2021-03-09 10:25:10,184:WARNING:__init__:ERROR: no such table: main.RUBRO:371
+2021-03-09 10:27:05,141:WARNING:__init__:ERROR: no such table: main.RUBRO:371
+2021-03-09 10:34:40,380:WARNING:__init__:ERROR: near ";": syntax error:371
+2021-03-09 10:35:09,331:WARNING:__init__:ERROR: near ";": syntax error:371
+2021-03-09 10:41:16,555:ERROR:run_query:error con:table main.UNDO has 11 columns but 2 values were supplied-UPDATE RUBROS SET "RUBRO" = ?  WHERE "RUBRO" = ? -['BOBINA', 'BOBINAS']:701
+Traceback (most recent call last):
+  File "E:\Dropbox\Programación\Python\GEST2020\gest2020.py", line 698, in run_query
+    result = cursor.execute(query, parameters)
+sqlite3.OperationalError: table main.UNDO has 11 columns but 2 values were supplied
+2021-03-09 10:50:00,394:ERROR:run_query:error con:table main.UNDO has 11 columns but 2 values were supplied-INSERT INTO "RUBROS" ("RUBRO") VALUES(?)-['ALGO']:701
+Traceback (most recent call last):
+  File "E:\Dropbox\Programación\Python\GEST2020\gest2020.py", line 698, in run_query
+    result = cursor.execute(query, parameters)
+sqlite3.OperationalError: table main.UNDO has 11 columns but 2 values were supplied
+2021-03-09 10:53:48,577:ERROR:run_query:error con:table main.UNDO has 1 columns but 2 values were supplied-INSERT INTO "RUBROS" ("RUBRO") VALUES(?)-['ALGO']:691
+Traceback (most recent call last):
+  File "E:\Dropbox\Programación\Python\GEST2020\gest2020.py", line 688, in run_query
+    result = cursor.execute(query, parameters)
+sqlite3.OperationalError: table main.UNDO has 1 columns but 2 values were supplied
+2021-06-02 12:09:13,469:ERROR:run_query:error con:FOREIGN KEY constraint failed-INSERT INTO "Maestro" ("CÓDIGO", "DESCRIPCIÓN", "UN", "PRECIO", "RUBRO") VALUES(? ,? ,? ,? ,?)-['P0610-GB-ARM', 'AMP.250W FM2010 C/EXIT.', 'UN', '0.0', 'Sin_Rubro']:664
+Traceback (most recent call last):
+  File "E:\Dropbox\Sistemas\Python\GEST2020\GEST2020.py", line 661, in run_query
+    result = cursor.execute(query, parameters)
+sqlite3.IntegrityError: FOREIGN KEY constraint failed
+2021-06-02 12:09:27,717:ERROR:run_query:error con:FOREIGN KEY constraint failed-INSERT INTO LISTAS VALUES(?, ?, ?, ?)-[('P0610-GB-ARM', 'ZZ0005', 0.0, 'MN'), ('P0610-GB-ARM', 'ZZ0001', 0.0, 'UN'), ('P0610-GB-ARM', 'ZE 5W05V6DO214', 2.0, 'UN'), ('P0610-GB-ARM', 'TX MRF2150', 1.0, 'UN'), ('P0610-GB-ARM', 'RMS008Û21206D1', 1.0, 'UN'), ('P0610-GB-ARM', 'NU3197', 2.0, 'UN'), ('P0610-GB-ARM', 'ID2732L', 1.0, 'UN'), ('P0610-GB-ARM', 'CS100N01206050', 2.0, 'UN'), ('P0610-GB-ARM', 'CS056P01206050', 1.0, 'UN'), ('P0610-GB-ARM', 'CS001N01206050', 2.0, 'UN'), ('P0610-GB-ARM', 'CI LM7824', 1.0, 'UN'), ('P0610-GB-ARM', 'CI BGY587', 1.0, 'UN'), ('P0610-GB-ARM', 'CEL002.2U100V', 1.0, 'UN'), ('P0610-GB-ARM', 'CEL00010U050V', 1.0, 'UN'), ('P0610-GB-ARM', 'CBCONST077', 0.03, 'MT'), ('P0610-GB-ARM', 'CATC100B470JC', 2.0, 'UN'), ('P0610-GB-ARM', 'CATC100B300JP', 1.0, 'UN'), ('P0610-GB-ARM', 'CATC100B151JC', 1.0, 'UN'), ('P0610-GB-ARM', 'CATC100B120JC', 1.0, 'UN'), ('P0610-GB-ARM', 'CATC100B102JC', 1.0, 'UN'), ('P0610-GB-ARM', 'BNA08-04-1-A', 1.0, 'UN'), ('P0610-GB-ARM', 'BNA05-3.5-0.6-R', 2.0, 'UN'), ('P0610-GB-ARM', 'BNA05-2-1-R', 1.0, 'UN'), ('P0610-GB-ARM', 'BNA05-0.5-1-R', 1.0, 'UN'), ('P0610-GB-ARM', 'AAACTUALIZACION', 40.723, 'UN')]:664
+Traceback (most recent call last):
+  File "E:\Dropbox\Sistemas\Python\GEST2020\GEST2020.py", line 659, in run_query
+    result = cursor.executemany(query, parameters)
+sqlite3.IntegrityError: FOREIGN KEY constraint failed
+2021-06-02 12:21:58,834:WARNING:__init__:ERROR: cannot concatenate object of type '<class 'str'>'; only Series and DataFrame objs are valid:371
+2021-06-02 12:29:25,795:WARNING:__init__:ERROR: unhashable type: 'list':371
+2021-06-02 12:31:03,526:WARNING:__init__:ERROR: unhashable type: 'list':371
+2021-06-02 12:34:45,900:WARNING:__init__:ERROR: __init__() got an unexpected keyword argument 'nom_columns':371
+2021-08-13 11:43:50,888:ERROR:run_query:error con:Incorrect number of bindings supplied. The current statement uses 14, and there are 16 supplied.-UPDATE Maestro SET "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "UN" = ? , "PRECIO" = ? , "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "RUBRO" = ? , "UN" = ? , "PRECIO" = ? , "RUBRO" = ?  WHERE "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? AND "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? -['AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'MO', '1.0', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm', 'C.BOBINAD', 'MO', '1.0', 'C.BOBINAD', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm', 'AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm']:664
+Traceback (most recent call last):
+  File "E:\Dropbox\Sistemas\Python\GEST2020\GEST2020.py", line 661, in run_query
+    result = cursor.execute(query, parameters)
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 14, and there are 16 supplied.
+2021-08-13 11:44:08,828:ERROR:run_query:error con:Incorrect number of bindings supplied. The current statement uses 21, and there are 27 supplied.-UPDATE Maestro SET "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "UN" = ? , "PRECIO" = ? , "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "RUBRO" = ? , "UN" = ? , "PRECIO" = ? , "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "RUBRO" = ? , "UN" = ? , "PRECIO" = ? , "RUBRO" = ?  WHERE "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? AND "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? AND "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? -['AC0.15', 'ALAMB.CU.ESMAL.0.15MM NO SOLDABLE', 'MO', '10.0', 'AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'C.BOBINAD', 'MO', '1.0', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm', 'C.BOBINAD', 'MO', '1.0', 'C.BOBINAD', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm', 'AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm', 'AC0.15', 'ALAMB.CU.ESMAL.0.15MM NO SOLDABLE', 'AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm']:664
+Traceback (most recent call last):
+  File "E:\Dropbox\Sistemas\Python\GEST2020\GEST2020.py", line 661, in run_query
+    result = cursor.execute(query, parameters)
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 21, and there are 27 supplied.
+2021-08-13 11:44:15,465:ERROR:run_query:error con:Incorrect number of bindings supplied. The current statement uses 28, and there are 40 supplied.-UPDATE Maestro SET "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "UN" = ? , "PRECIO" = ? , "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "RUBRO" = ? , "UN" = ? , "PRECIO" = ? , "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "RUBRO" = ? , "UN" = ? , "PRECIO" = ? , "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "RUBRO" = ? , "UN" = ? , "PRECIO" = ? , "RUBRO" = ?  WHERE "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? AND "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? AND "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? AND "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? -['AC0.25S', 'ALAMB.CU.ESMAL.0.25mm SOLDABLE', 'MO', '10.0', 'AC0.15', 'ALAMB.CU.ESMAL.0.15MM NO SOLDABLE', 'C.BOBINAD', 'MO', '10.0', 'AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'C.BOBINAD', 'MO', '1.0', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm', 'C.BOBINAD', 'MO', '1.0', 'C.BOBINAD', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm', 'AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm', 'AC0.15', 'ALAMB.CU.ESMAL.0.15MM NO SOLDABLE', 'AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm', 'AC0.25S', 'ALAMB.CU.ESMAL.0.25mm SOLDABLE', 'AC0.15', 'ALAMB.CU.ESMAL.0.15MM NO SOLDABLE', 'AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'AC0.12', 'ALAMB.CU.ESMAL.0.12mm']:664
+Traceback (most recent call last):
+  File "E:\Dropbox\Sistemas\Python\GEST2020\GEST2020.py", line 661, in run_query
+    result = cursor.execute(query, parameters)
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 28, and there are 40 supplied.
+2021-08-13 11:47:27,913:ERROR:run_query:error con:Incorrect number of bindings supplied. The current statement uses 14, and there are 16 supplied.-UPDATE Maestro SET "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "UN" = ? , "PRECIO" = ? , "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "RUBRO" = ? , "UN" = ? , "PRECIO" = ? , "RUBRO" = ?  WHERE "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? AND "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? -['AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'MO', '1.0', 'AC0.121', 'ALAMB.CU.ESMAL.0.12mm fds', 'C.BOBINAD', 'MO', '2.0', 'CABLEADOS', 'AC0.121', 'ALAMB.CU.ESMAL.0.12mm fds', 'AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'AC0.121', 'ALAMB.CU.ESMAL.0.12mm fds']:664
+Traceback (most recent call last):
+  File "E:\Dropbox\Sistemas\Python\GEST2020\GEST2020.py", line 661, in run_query
+    result = cursor.execute(query, parameters)
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 14, and there are 16 supplied.
+2021-08-13 11:48:54,073:ERROR:run_query:error con:Incorrect number of bindings supplied. The current statement uses 14, and there are 16 supplied.-UPDATE Maestro SET "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "UN" = ? , "PRECIO" = ? , "CÓDIGO" = ? , "DESCRIPCIÓN" = ? , "RUBRO" = ? , "UN" = ? , "PRECIO" = ? , "RUBRO" = ?  WHERE "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? AND "CÓDIGO" = ? AND "DESCRIPCIÓN" = ? -['AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'MO', '1.0', 'AC0.121', 'ALAMB.CU.ESMAL.0.12mm fds', 'C.BOBINAD', 'MO', '2.0', 'CABLEADOS', 'AC0.121', 'ALAMB.CU.ESMAL.0.12mm fds', 'AC0.14', 'ALAMB.CU.ESMAL.0.14mm SOLDABLE', 'AC0.121', 'ALAMB.CU.ESMAL.0.12mm fds']:664
+Traceback (most recent call last):
+  File "E:\Dropbox\Sistemas\Python\GEST2020\GEST2020.py", line 661, in run_query
+    result = cursor.execute(query, parameters)
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 14, and there are 16 supplied.
