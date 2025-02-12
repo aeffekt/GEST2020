@@ -1,0 +1,46 @@
+# Entorno virtual y variables de entorno
+venv/
+.venv/
+.env
+*.env
+
+# Archivos de Python generados
+*.pyc
+*.pyo
+__pycache__/
+
+# Configuración del IDE
+.vscode/
+.idea/
+*.DS_Store
+
+# Dependencias compiladas
+*.so
+*.dll
+*.dylib
+
+# Logs y bases de datos
+*.log
+*.sqlite3
+*.db
+
+# Pytest
+.cache/
+.coverage
+htmlcov/
+
+# Mypy
+.mypy_cache/
+dmypy.json
+
+# Docker
+*.dockerignore
+docker-compose.override.yml
+
+# Archivos estáticos
+/staticfiles/
+/media/
+
+# Black y otros linters
+*.swp
+*.bak
