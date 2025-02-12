@@ -1,3 +1,8 @@
+# Extra folders
+dist/
+Capturas/
+GEST(DOS)/
+
 # Entorno virtual y variables de entorno
 venv/
 .venv/
@@ -8,6 +13,7 @@ venv/
 *.pyc
 *.pyo
 __pycache__/
+
 
 # Configuración del IDE
 .vscode/
