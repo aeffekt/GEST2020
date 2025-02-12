@@ -1,30 +1,27 @@
 # GEST 2020 - P.O.S. desarrollado para la empresa L.I.E. S.R.L. por Agustín Arnaiz
 
 
-# Modulos usados:
-OS
+## Modulos usados:
 Tkinter
 numpy
-datetime
-Pandas		-pip install pandas
-SQLite3		-pip install sqlite3
-win32print	-pip install pywin32
-ttkthemes	-pip install ttkthemes
-tabulator	-pip install tabulator
-pyinstaller	-pip install pyinstaller
-customtkinter	-pip install customtkinter (por probar)
-win32api	
+Pandas
+pywin32
+ttkthemes
+tabulator
+pyinstaller
+win32api
 functools
-itertools
-***xlsxwriter	-pip install xlsxwriter *** sin uso
 
 ## CREAR INSTALADOR STANDALONE
-CMD: pyinstaller -w --onefile --icon=./logo.ico GEST2020.py
+CMD: 
+'''
+pyinstaller -w --onefile --icon=./logo.ico GEST2020.py
+'''
 -w= no muestra ventana CMD al ejecutar
 --onefile= crea un ejecutable .exe (es mas lento el programa y no es necesario)
 --icon (icono del programa)
 
-# VERSIONES
+## VERSIONES
 V0.1.0	02/07/20
 Manejo CRUD de base de datos LISTAS.db
 Conversion XLS a sqlite3
@@ -202,4 +199,4 @@ v1.0.10 14/07/23
 se agrego boton "Ver" para ver una lista valorizada sin imprimir
 
 v1.1.0 12/02/25
-se implementa la opcion de agregar múltiples items maestros a Listas
+se implementa la opcion de agregar múltiples items maestros a Listas en un solo paso

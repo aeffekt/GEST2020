@@ -1,7 +1,9 @@
-# Extra folders
+# Extra folders and files
 dist/
 Capturas/
 GEST(DOS)/
+versiones/
+.gitignore
 
 # Entorno virtual y variables de entorno
 venv/

@@ -1,6 +1,8 @@
-tabulate
-functools
 pandas
 numpy
 tkinter
 ttkthemes
+tabulate
+functools
+pywin32
+pyinstaller

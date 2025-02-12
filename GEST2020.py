@@ -4,7 +4,7 @@ Su fin es conseguir una orden de compra de materiales unificada como "orden de t
 ordenada por ORDEN, y por RUBROS y poder imprimirla via S.O. Windows.
 Diseñado para la empresa L.I.E. S.R.L. por Agustin Arnaiz. '''
 
-version = "1.0.10"
+version = "1.1.0"
 
 import os, sys							# check path + impresión de shell "print" *(not in use)
 import win32print, win32ui, win32con 	# uso de impresora
@@ -770,7 +770,7 @@ class ManageTable:
 		return nom_column, arg_query, parameters
 
 	# agrega un registro en la base de datos
-	def add_record(self, *args):
+	def add_record(self, *args):		
 		if self.valid_add():
 			nom_column, arg_query, parameters= self.add_query()			
 			query = f'INSERT INTO "{self.table_name}" ({", ".join(nom_column)}) ' \
@@ -1159,11 +1159,28 @@ class Listas(ManageTable):
 
 	# override: elimina NONE de CANT, ejecuta super() y borra el codigo de entry, para agregar otro luego (especial si se agrega desde maestro)
 	def add_record(self, *args):
-		# Si no se especifica una cantidad, le pone 0 (sino hay error al imprimir con valor None)
-		if self.entry_array[2].get() == '' or  self.entry_array[2].get()== None:
-			self.entry_array[2].insert(0, 0)
-		super().add_record()
-		self.entry_array[1].delete(0, 50)	
+		selection = maestro.tree.selection()
+		if len(selection)>1:
+			 # Si hay múltiples elementos seleccionados, itera sobre ellos y agrega cada uno a la lista
+			for item in selection:
+				# Obtiene el código del elemento seleccionado
+				codigo = maestro.tree.item(item, 'text')
+				
+				# Carga el código en el campo de entrada de la lista
+				self.entry_array[1].delete(0, tk.END)
+				self.entry_array[1].insert(tk.END, codigo)
+				
+				# Llama a super().add_record() para agregar el registro
+				super().add_record()
+			
+			# Actualiza la vista de la lista
+			self.show_data(like='', open=True)
+		else:
+			# Si no se especifica una cantidad, le pone 0 (sino hay error al imprimir con valor None)
+			if self.entry_array[2].get() == '' or  self.entry_array[2].get()== None:
+				self.entry_array[2].insert(0, 0)
+			super().add_record()
+			self.entry_array[1].delete(0, 50)	
 
 	# carga una lista segun el codigo en maestro con doble click
 	def load_lista(self, *args):
