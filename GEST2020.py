@@ -1161,20 +1161,28 @@ class Listas(ManageTable):
 	def add_record(self, *args):
 		selection = maestro.tree.selection()
 		if len(selection)>1:
+			step = 100 / len(selection)
 			 # Si hay múltiples elementos seleccionados, itera sobre ellos y agrega cada uno a la lista
-			for item in selection:
+			for index, item in enumerate(selection):
+				self.progress_bar['value'] = step * index
+				self.window.update()
 				# Obtiene el código del elemento seleccionado
 				codigo = maestro.tree.item(item, 'text')
 				
 				# Carga el código en el campo de entrada de la lista
 				self.entry_array[1].delete(0, tk.END)
 				self.entry_array[1].insert(tk.END, codigo)
+				self.entry_array[2].insert(0, 0)
 				
 				# Llama a super().add_record() para agregar el registro
 				super().add_record()
+				self.message['text'] = f'Elemento {index} - {codigo} ha sido agregado con éxito'
 			
 			# Actualiza la vista de la lista
 			self.show_data(like='', open=True)
+			# Vuelve a cero la barra de progreso
+			self.progress_bar['value'] = 0
+			self.message['text'] = f'{len(selection)} elementos han sido agregados con éxito'
 		else:
 			# Si no se especifica una cantidad, le pone 0 (sino hay error al imprimir con valor None)
 			if self.entry_array[2].get() == '' or  self.entry_array[2].get()== None:

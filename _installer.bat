@@ -1,1 +1,1 @@
-pyinstaller -w --icon=./logo.ico GEST2020V1.0.10.py
+pyinstaller -w --icon=./logo.ico GEST2020.py
