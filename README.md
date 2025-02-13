@@ -200,3 +200,6 @@ se agrego boton "Ver" para ver una lista valorizada sin imprimir
 
 v1.1.0 12/02/25
 se implementa la opcion de agregar múltiples items maestros a Listas en un solo paso
+
+v1.1.1 13/02/25
+Abre ventana con confirmación antes de eliminar uno o varios items

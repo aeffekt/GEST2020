@@ -4,7 +4,7 @@ Su fin es conseguir una orden de compra de materiales unificada como "orden de t
 ordenada por ORDEN, y por RUBROS y poder imprimirla via S.O. Windows.
 Diseñado para la empresa L.I.E. S.R.L. por Agustin Arnaiz. '''
 
-version = "1.1.0"
+version = "1.1.1"
 
 import os, sys							# check path + impresión de shell "print" *(not in use)
 import win32print, win32ui, win32con 	# uso de impresora
@@ -878,34 +878,35 @@ class ManageTable:
 		except Exception as err:
 			messagebox.showwarning('Atención','{err}', parent=self.window)
 		else:
-			step_bar = 100 / len(selection)
-			for index, iid in enumerate(selection, start=1):
-				self.progress_bar['value'] = step_bar * index
-				item = self.tree.item(iid)
-				# Elimina el registro con mismo código y descripción o misma Lista y elemento
-				cod_selected = item['text']
-				try:
-					descr_selected = item['values'][0]
-				#este artificio funciona para rubros que solo tiene una columna ['text'] y no la columna ['values']
-				except:
-					descr_selected = 'None'
-				#para los escasos registros donde la descr es NULL, esto permite borrar esa entrada
-				if descr_selected == 'None' or descr_selected == None:
-					query = f'DELETE FROM "{self.table_name}" ' \
-							f'WHERE "{self.table_columns[0]}" = ? '
-					parameters = [cod_selected]
-				else:
-					query = f'DELETE FROM "{self.table_name}" ' \
-							f'WHERE "{self.table_columns[0]}" = ? ' \
-							f'AND "{self.table_columns[1]}" = ?'
-					parameters = [cod_selected, descr_selected]
-				self.run_query(query, parameters)
-				self.message['text'] = f'Eliminado: {cod_selected} {descr_selected}'
-				self.window.update()
-			if len(selection) > 1:
-				self.message['text'] = f'{len(selection)} registros han sido eliminados'
-			self.progress_bar['value'] = 0
-			self.show_data(like='', open=True)  # actualiza la tabla
+			if messagebox.askquestion('Pregunta', f'¿Desea eliminar {len(selection)} items?') == 'yes':
+				step_bar = 100 / len(selection)
+				for index, iid in enumerate(selection, start=1):
+					self.progress_bar['value'] = step_bar * index
+					item = self.tree.item(iid)
+					# Elimina el registro con mismo código y descripción o misma Lista y elemento
+					cod_selected = item['text']
+					try:
+						descr_selected = item['values'][0]
+					#este artificio funciona para rubros que solo tiene una columna ['text'] y no la columna ['values']
+					except:
+						descr_selected = 'None'
+					#para los escasos registros donde la descr es NULL, esto permite borrar esa entrada
+					if descr_selected == 'None' or descr_selected == None:
+						query = f'DELETE FROM "{self.table_name}" ' \
+								f'WHERE "{self.table_columns[0]}" = ? '
+						parameters = [cod_selected]
+					else:
+						query = f'DELETE FROM "{self.table_name}" ' \
+								f'WHERE "{self.table_columns[0]}" = ? ' \
+								f'AND "{self.table_columns[1]}" = ?'
+						parameters = [cod_selected, descr_selected]
+					self.run_query(query, parameters)
+					self.message['text'] = f'Eliminado: {cod_selected} {descr_selected}'
+					self.window.update()
+				if len(selection) > 1:
+					self.message['text'] = f'{len(selection)} registros han sido eliminados'
+				self.progress_bar['value'] = 0
+				self.show_data(like='', open=True)  # actualiza la tabla
 
 	# Borra los entrys de registro
 	def clean_entrys(self, *args):
