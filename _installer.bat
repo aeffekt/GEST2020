@@ -1,1 +1,3 @@
 pyinstaller -w --icon=./logo.ico GEST2020.py
+echo Proceso completado. Presiona una tecla para salir...
+pause

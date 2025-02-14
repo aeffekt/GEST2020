@@ -405,6 +405,16 @@ class CreateDatabase:
 				WHERE "ORDEN" = new.ORDEN AND "CÓDIGO" = new.CÓDIGO;
 			END;'''
 		CreateDatabase.conn.execute(query)
+		# Trigger actualiza rubro por defecto en maestro si es NULL
+		query = '''CREATE TRIGGER IF NOT EXISTS set_default_rubro
+				AFTER INSERT ON MAESTRO
+				FOR EACH ROW
+				WHEN NEW.RUBRO IS NULL
+				BEGIN
+					UPDATE MAESTRO SET RUBRO = 'SIN_RUBRO' WHERE CÓDIGO = NEW.CÓDIGO;
+				END;'''
+		CreateDatabase.conn.execute(query)
+
 
 	# Abre xls de la tabla y genera la query para agregar a la db
 	@staticmethod
